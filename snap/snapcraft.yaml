@@ -1,16 +1,65 @@
-name: my-snap-name # you probably want to 'snapcraft register <name>'
-version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
-summary: Single-line elevator pitch for your amazing snap # 79 char long summary
+name: proton-mail
+icon: snap/gui/proton-mail.svg
+summary: Proton Mail desktop application.
+version: 1.0.5
 description: |
-  This is my-snap's description. You have a paragraph or two to tell the
-  most important story about your snap. Keep it under 100 words though,
-  we live in tweetspace and your description wants to look good in the snap
-  store.
+  Proton desktop application for Proton Mail and Proton Calendar.
 
-base: core22
-confinement: devmode # use 'strict' once you have the right plugs and slots
+website: https://proton.me/mail
+contact: https://github.com/pedro-avalos/proton-mail-snap/issues
+issues: https://github.com/pedro-avalos/proton-mail-snap/issues
+source-code: https://github.com/ProtonMail/inbox-desktop
+
+base: core24
+grade: stable
+confinement: strict
+compression: lzo
+
+platforms:
+  amd64:
+
+apps:
+  proton-mail:
+    command: usr/bin/proton-mail --no-sandbox
+    desktop: meta/gui/proton-mail.desktop
+    extensions:
+      - gnome
+    plugs:
+      - desktop
+      - desktop-legacy
+      - wayland
+      - unity7
+      - x11
+      - browser-support
+      - gsettings
+      - home
+      - removable-media
+      - hardware-observe  # NOTE: used to detect security keys
+      - u2f-devices  # TODO: Request auto-connect
+      - network
 
 parts:
-  my-part:
-    # See 'snapcraft plugins'
-    plugin: nil
+  proton-mail:
+    plugin: npm
+    source-type: zip
+    source: https://github.com/ProtonMail/inbox-desktop/releases/download/${SNAPCRAFT_PROJECT_VERSION}/inbox-desktop-${SNAPCRAFT_PROJECT_VERSION}-source.zip
+    source-subdir: inbox-desktop-source
+    build-snaps:
+      - node/20/stable
+    build-packages:
+      - git
+    override-build: |
+      cd $CRAFT_PART_SRC_WORK
+
+      # electron-forge is not installed in production mode
+      yarn install --production=false
+      yarn package
+
+      mkdir -p $CRAFT_PART_INSTALL/usr/lib/proton-mail \
+        $CRAFT_PART_INSTALL/usr/bin
+
+      cp -r out/Proton\ Mail-linux-x64/* \
+        $CRAFT_PART_INSTALL/usr/lib/proton-mail/
+
+      ln -s ../lib/proton-mail/Proton\ Mail \
+        $CRAFT_PART_INSTALL/usr/bin/proton-mail

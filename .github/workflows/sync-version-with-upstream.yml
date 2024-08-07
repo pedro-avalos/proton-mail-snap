@@ -25,3 +25,4 @@ jobs:
             VERSION=$(curl -sL https://api.github.com/repos/ProtonMail/inbox-desktop/releases |
               jq . | grep tag_name | grep -v beta | grep -v rc | head -n 1 | cut -d'"' -f4 | tr -d 'v'
             )
+            sed -i 's/^\(version: \).*$/\1'"$VERSION"'/' snap/snapcraft.yaml

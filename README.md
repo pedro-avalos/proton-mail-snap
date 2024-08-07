@@ -45,9 +45,9 @@ Snapcrafters ([join us](https://forum.snapcraft.io/t/snapcrafters-reboot/24625))
   - [X] Update logos and references to `[Project]` and `[my-snap-name]`
   - [X] Create a snap that runs in `devmode`
   - [X] Convert the snap to `strict` confinement, or `classic` confinement if it qualifies
-  - [ ] Register the snap in the store, **using the preferred upstream name**
+  - [X] Register the snap in the store, **using the preferred upstream name**
   - [ ] Add a screenshot to this `README.md`
-  - [ ] Add install instructions to this `README.md`
+  - [X] Add install instructions to this `README.md`
   - [ ] Update snap store metadata, icons and screenshots
   - [ ] Publish the confined snap in the Snap store beta channel
   - [ ] Update the install instructions in this `README.md`

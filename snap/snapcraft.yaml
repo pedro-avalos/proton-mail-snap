@@ -21,7 +21,7 @@ platforms:
 apps:
   proton-mail:
     command: usr/bin/proton-mail --no-sandbox
-    desktop: meta/gui/proton-mail.desktop
+    desktop: usr/share/applications/proton-mail.desktop
     extensions:
       - gnome
     plugs:
@@ -40,26 +40,9 @@ apps:
 
 parts:
   proton-mail:
-    plugin: npm
-    source-type: zip
-    source: https://github.com/ProtonMail/inbox-desktop/releases/download/${SNAPCRAFT_PROJECT_VERSION}/inbox-desktop-${SNAPCRAFT_PROJECT_VERSION}-source.zip
-    source-subdir: inbox-desktop-source
-    build-snaps:
-      - node/20/stable
-    build-packages:
-      - git
-    override-build: |
-      cd $CRAFT_PART_SRC_WORK
-
-      # electron-forge is not installed in production mode
-      yarn install --production=false
-      yarn package
-
-      mkdir -p $CRAFT_PART_INSTALL/usr/lib/proton-mail \
-        $CRAFT_PART_INSTALL/usr/bin
-
-      cp -r out/Proton\ Mail-linux-x64/* \
-        $CRAFT_PART_INSTALL/usr/lib/proton-mail/
-
-      ln -s ../lib/proton-mail/Proton\ Mail \
-        $CRAFT_PART_INSTALL/usr/bin/proton-mail
+    plugin: dump
+    source-type: deb
+    source: https://proton.me/download/mail/linux/ProtonMail-desktop-beta.deb
+    source-checksum: sha512/108e434004b323d63f3240f86f8c6e13d0e42d09a59846a8d04b44914927985e93e68ca11ca110581186fc663b28e5eec6d3b49751c0eca9e04f0dea3cf753b3
+    prime:
+      - -usr/lib/proton-mail/chrome-sandbox

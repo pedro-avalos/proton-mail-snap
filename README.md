@@ -8,16 +8,14 @@
 <i>“Proton desktop application for Proton Mail and Proton Calendar”</i>.
 It works on Ubuntu, Fedora, Debian, and other major Linux distributions.</p>
 
-<!-- Uncomment and modify this when you are provided a build status badge
 <p align="center">
-<a href="https://snapcraft.io/my-snap-name">
-  <img alt="enpass" src="https://snapcraft.io/my-snap-name/badge.svg" />
+<a href="https://snapcraft.io/proton-mail">
+  <img alt="enpass" src="https://snapcraft.io/proton-mail/badge.svg" />
 </a>
-<a href="https://snapcraft.io/my-snap-name">
-  <img alt="enpass" src="https://snapcraft.io/my-snap-name/trending.svg?name=0" />
+<a href="https://snapcraft.io/proton-mail">
+  <img alt="enpass" src="https://snapcraft.io/proton-mail/trending.svg?name=0" />
 </a>
 </p>
--->
 
 <!-- Uncomment and modify this when you have a screenshot
 ![my-snap-name](screenshot.png?raw=true "my-snap-name")
@@ -29,9 +27,7 @@ It works on Ubuntu, Fedora, Debian, and other major Linux distributions.</p>
 
     sudo snap install proton-mail
 
-<!-- Uncomment and modify this when your snap is available on the store
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/my-snap-name)
--->
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/proton-mail)
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 

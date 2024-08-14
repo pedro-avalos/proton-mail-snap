@@ -1,7 +1,7 @@
 name: proton-mail
 icon: snap/gui/proton-mail.svg
 summary: Proton Mail desktop application.
-version: 1.0.5
+version: 1.0.6
 description: |
   Proton desktop application for Proton Mail and Proton Calendar.
 
@@ -48,7 +48,7 @@ parts:
   proton-mail:
     plugin: dump
     source-type: deb
-    source: https://proton.me/download/mail/linux/ProtonMail-desktop-beta.deb
-    source-checksum: sha512/108e434004b323d63f3240f86f8c6e13d0e42d09a59846a8d04b44914927985e93e68ca11ca110581186fc663b28e5eec6d3b49751c0eca9e04f0dea3cf753b3
+    source: https://github.com/ProtonMail/inbox-desktop/releases/download/${SNAPCRAFT_PROJECT_VERSION}/proton-mail_${SNAPCRAFT_PROJECT_VERSION}_${CRAFT_ARCH_BUILD_FOR}.deb
+    source-checksum: sha512/fb51c0cd2124188ec40ba38c863933905a26a7457e8738048865ed4a43feb6afb30df8f20924eccfaca9e69e17f0b63960fc2e986edaaf714906d56534b8b462
     prime:
       - -usr/lib/proton-mail/chrome-sandbox

@@ -20,7 +20,7 @@ platforms:
 
 apps:
   proton-mail:
-    command: usr/bin/proton-mail --no-sandbox
+    command: launcher
     desktop: usr/share/applications/proton-mail.desktop
     extensions:
       - gnome
@@ -39,6 +39,12 @@ apps:
       - network
 
 parts:
+  launcher:
+    plugin: dump
+    source: launcher
+    override-build: |
+      cp launcher $CRAFT_PART_INSTALL/
+
   proton-mail:
     plugin: dump
     source-type: deb

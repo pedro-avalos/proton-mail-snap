@@ -22,6 +22,8 @@ apps:
   proton-mail:
     command: launcher
     desktop: usr/share/applications/proton-mail.desktop
+    environment:
+      DISABLE_WAYLAND: 1
     extensions:
       - gnome
     plugs:
@@ -35,7 +37,7 @@ apps:
       - home
       - removable-media
       - hardware-observe  # NOTE: used to detect security keys
-      - u2f-devices  # TODO: Request auto-connect
+      - u2f-devices       # TODO: Request auto-connect
       - network
 
 parts:

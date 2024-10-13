@@ -3,7 +3,17 @@ icon: snap/gui/proton-mail.svg
 summary: Proton Mail desktop application.
 version: 1.2.4
 description: |
+  NOTE: This is a wrapper of the official package, but it is not verified,
+  affiliated with, or supported by Proton AG.
+
   Proton desktop application for Proton Mail and Proton Calendar.
+
+  To use security keys, connect the `hardware-observe` and `u2f-devices`
+  interfaces.
+
+  `sudo snap connect proton-pass:hardware-observe`
+
+  `sudo snap connect proton-pass:u2f-devices`
 
 website: https://proton.me/mail
 contact: https://github.com/pedro-avalos/proton-mail-snap/issues

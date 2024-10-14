@@ -2,6 +2,7 @@ name: proton-mail
 icon: snap/gui/proton-mail.svg
 summary: Proton Mail desktop application.
 version: 1.2.4
+license: GPL-3.0
 description: |
   NOTE: This is a wrapper of the official package, but it is not verified,
   affiliated with, or supported by Proton AG.
@@ -46,8 +47,8 @@ apps:
       - gsettings
       - home
       - removable-media
-      - hardware-observe  # NOTE: used to detect security keys
-      - u2f-devices       # TODO: Request auto-connect
+      - hardware-observe
+      - u2f-devices
       - network
 
 parts:

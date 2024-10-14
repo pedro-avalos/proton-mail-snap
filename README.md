@@ -4,7 +4,7 @@
   Proton Mail
 </h1>
 
-<p align="center"><b>This is the snap for Proton Mail</b>,
+<p align="center"><b>This is the snap for <a href="https://proton.me/mail">Proton Mail</a></b>,
 <i>“Proton desktop application for Proton Mail and Proton Calendar”</i>.
 It works on Ubuntu, Fedora, Debian, and other major Linux distributions.</p>
 

@@ -90,6 +90,7 @@ apps:
   proton-mail:
     command: launcher
     desktop: usr/share/applications/proton-mail.desktop
+    common-id: me.proton.Mail
     environment:
       DISABLE_WAYLAND: 1
     extensions:

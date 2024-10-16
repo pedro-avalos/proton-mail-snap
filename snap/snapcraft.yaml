@@ -88,7 +88,7 @@ platforms:
 
 apps:
   proton-mail:
-    command: launcher
+    command: bin/launcher
     desktop: usr/share/applications/proton-mail.desktop
     common-id: me.proton.Mail
     environment:
@@ -112,9 +112,8 @@ apps:
 parts:
   launcher:
     plugin: dump
-    source: launcher
-    override-build: |
-      cp launcher $CRAFT_PART_INSTALL/
+    source: snap/local
+    source-type: local
 
   proton-mail:
     plugin: dump

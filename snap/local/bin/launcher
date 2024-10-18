@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 if [[ ! -n "$DISABLE_WAYLAND" ]] && [[ -n "$WAYLAND_DISPLAY" ]] ; then
   WAYLAND_OPTS="--enable-features=WaylandWindowDecorations,WebRTCPipeWireCapturer --ozone-platform-hint=auto"

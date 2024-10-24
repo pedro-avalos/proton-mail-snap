@@ -8,14 +8,70 @@ description: |
   NOTE: This is a wrapper of the official package, but it is not verified,
   affiliated with, or supported by Proton AG.
 
-  Proton desktop application for Proton Mail and Proton Calendar.
+  Keep your conversations private. Proton Mail is encrypted email from
+  Switzerland. Used by millions worldwide, our all-new email app protects your
+  communications and has everything you need to easily manage your inbox.
 
-  To use security keys, connect the `hardware-observe` and `u2f-devices`
-  interfaces.
+  **The Wall Street Journal says:**
 
-  `sudo snap connect proton-pass:hardware-observe`
+  "Proton Mail offers encrypted email, which makes it virtually impossible for
+  anyone to read it except the sender and the recipient."
 
-  `sudo snap connect proton-pass:u2f-devices`
+  **With the all-new Proton Mail app, you can:**
+
+  * Create a @proton.me or @protonmail.com email address
+  * Send and receive encrypted emails and attachments with ease
+  * Switch between multiple Proton Mail accounts
+  * Easily manage your email with conversations
+  * Keep your inbox tidy and clean with folders, labels and simple swipe-gestures
+  * Receive new email notifications
+  * Send Password-protected Emails to anyone
+  * Enjoy your inbox in dark mode
+
+  **Why use Proton Mail?**
+
+  * Proton Mail is free -- We believe everyone deserves privacy. Upgrade to a
+    paid plan to get more done and support our mission.
+  * Easy to use -- Our all-new app has been redesigned to make it easier to
+    read, organize, and write your emails.
+  * Your inbox is yours -- We don't spy on your communications to show you
+    targeted ads. Your inbox, your rules.
+  * Rigorous encryption -- Your entire inbox is secured, on all your devices. No
+    one can read your emails but you.
+  * Proton is privacy, guaranteed by end-to-end and zero-access encryption.
+  * Unmatched protection -- We offer strong phishing, spam, and spying/tracking
+    protection for all your communications.
+
+  **Industry Leading Security Features**
+
+  Messages are stored on Proton Mail servers using end-to-end encryption at all
+  times and are transmitted securely between Proton servers and user devices.
+  This largely eliminates the risk of message interception.
+
+  **Zero Access to Your Email Content**
+
+  Proton Mail's zero access architecture means that your data is encrypted in a
+  way that makes it inaccessible to us. Data is encrypted on the client side
+  using an encryption key that Proton does not have access to. This means we
+  don't have the technical ability to decrypt your messages.
+
+  **Open-Source Cryptography**
+
+  Proton Mail's open-source software has been thoroughly vetted by security
+  experts from around the world to ensure the highest levels of protection.
+  Proton Mail only uses secure implementations of AES, RSA, along with OpenPGP,
+  while all of the cryptographic libraries used are open source. By using
+  open-source libraries, Proton Mail can guarantee that the encryption
+  algorithms used do not have clandestinely built-in back doors.
+
+  **Proton Mail in the press:**
+
+  "Proton Mail is a Gmail-like email system which uses end-to-end encryption,
+  making it impossible for outside parties to monitor." _Forbes_
+
+  "A new email service being developed by a group who met at MIT and CERN
+  promises to bring secure, encrypted email to the masses and keep sensitive
+  information away from prying eyes." _Huffington Post_
 
 website: https://proton.me/mail
 contact: https://github.com/pedro-avalos/proton-mail-snap/issues
@@ -32,8 +88,9 @@ platforms:
 
 apps:
   proton-mail:
-    command: launcher
+    command: bin/launcher
     desktop: usr/share/applications/proton-mail.desktop
+    common-id: me.proton.Mail
     environment:
       DISABLE_WAYLAND: 1
     extensions:
@@ -55,9 +112,8 @@ apps:
 parts:
   launcher:
     plugin: dump
-    source: launcher
-    override-build: |
-      cp launcher $CRAFT_PART_INSTALL/
+    source: snap/local
+    source-type: local
 
   proton-mail:
     plugin: dump

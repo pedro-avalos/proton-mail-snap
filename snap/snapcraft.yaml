@@ -2,7 +2,7 @@ name: proton-mail
 icon: snap/gui/proton-mail.svg
 title: Proton Mail
 summary: Proton Mail desktop application.
-version: 1.7.0
+version: 1.7.1
 license: GPL-3.0
 description: |
   NOTE: This is a wrapper of the official package, but it is not verified,
@@ -119,6 +119,6 @@ parts:
     plugin: dump
     source-type: deb
     source: https://proton.me/download/mail/linux/${SNAPCRAFT_PROJECT_VERSION}/ProtonMail-desktop-beta.deb
-    source-checksum: sha512/91eed1e913cdb5398b89743f11c29349e128d38b2a999291da4909e224c11320b14c5da981e4ec8b39cdc15d0aa2c12a363fde707fbff20f7219c636e3dad9ef
+    source-checksum: sha512/42051de5e8045c190752f248fa84263f594b0e9a4e553f8c1ac989a513d2ad521c46632de424f0bbebce1ecd9bbb7c136c3da40bd8feae1819957e5c463616fb
     prime:
       - -usr/lib/proton-mail/chrome-sandbox

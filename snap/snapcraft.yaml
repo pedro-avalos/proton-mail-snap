@@ -119,6 +119,6 @@ parts:
     plugin: dump
     source-type: deb
     source: https://proton.me/download/mail/linux/${SNAPCRAFT_PROJECT_VERSION}/ProtonMail-desktop-beta.deb
-    source-checksum: sha512/a2acd0a10afe0fb1bc9d819af3eb4470d0370c5ad208650b712c34068d931181d411155854724831473bb6cffbf6cf7dc148c5cdc95c3d676c3dfa9bac5989ed
+    source-checksum: sha512/3267112cc06dc001ac59531abd84bd89a0c44ff0314ad53db2f5eb32de8f2f482ab02241a20682c08ace6cb65c13a74bb12cb77777889e240c3ed6bc64055112
     prime:
       - -usr/lib/proton-mail/chrome-sandbox

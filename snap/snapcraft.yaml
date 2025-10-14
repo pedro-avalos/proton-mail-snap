@@ -76,7 +76,7 @@ description: |
 website: https://proton.me/mail
 contact: https://github.com/pedro-avalos/proton-mail-snap/issues
 issues: https://github.com/pedro-avalos/proton-mail-snap/issues
-source-code: https://github.com/ProtonMail/inbox-desktop
+source-code: https://github.com/ProtonMail/WebClients/tree/main/applications/inbox-desktop
 
 base: core24
 grade: stable

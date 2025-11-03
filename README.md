@@ -1,3 +1,6 @@
+> [!NOTE]
+> The snap is now upstreamed and managed by Proton AG under https://github.com/protonmail/webclients
+
 <h1 align="center">
   <img src="snap/gui/proton-mail.svg" alt="Proton Mail" width="256px">
   <br />
